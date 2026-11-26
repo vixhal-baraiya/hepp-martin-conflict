@@ -147,7 +147,7 @@ The graphs and the reference values come from P.-H. Balduf, *Feynman periods in 
 
 ## Citation
 
-The code, data and Lean proof are archived on Zenodo: [doi:10.5281/zenodo.24559411](https://doi.org/10.5281/zenodo.24559411) (all versions). Version 1.1 adds the $c_2$ invariants and corrects the assessment of which conjecture fails; version 1.0 is [doi:10.5281/zenodo.24559412](https://doi.org/10.5281/zenodo.24559412). GitHub's "Cite this repository" button uses [CITATION.cff](CITATION.cff).
+The code, data and Lean proof are archived on Zenodo: [doi:10.5281/zenodo.24559411](https://doi.org/10.5281/zenodo.24559411) (all versions). Version 1.1 ([doi:10.5281/zenodo.24560046](https://doi.org/10.5281/zenodo.24560046)) adds the $c_2$ invariants and corrects the assessment of which conjecture fails; version 1.0 is [doi:10.5281/zenodo.24559412](https://doi.org/10.5281/zenodo.24559412). GitHub's "Cite this repository" button uses [CITATION.cff](CITATION.cff).
 
 ## Author and license
 
