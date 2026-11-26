@@ -8,6 +8,7 @@ from graphs import load_pairs, parse, decomplete, vertices, check_completed_prim
 from hepp_exact import primes_below, residues, run, bound_bits
 from martin_trees import martin_by_trees
 from martin_recursion import martin_r
+from c2 import c2_from_martin
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--jobs", type=int, default=max(1, min(8, (os.cpu_count() or 2) - 1)))
@@ -17,6 +18,7 @@ args = ap.parse_args()
 primes = primes_below(1 << 30, args.primes)
 t0 = time.time()
 ok_all = True
+c2_differs = False
 
 
 def say(*a):
@@ -43,7 +45,9 @@ for i, pair in enumerate(load_pairs(), 1):
         say(f"  M(G)     = {m1}   (spanning-tree partitions at all {len(vertices(E))} vertices = vertex recursion;"
             f" dataset ln M1 {g['data_lnM1']}, ours {math.log(m1):.10f})")
         say(f"  M(G^[2]) = {m2}   (vertex recursion; dataset ln M2 {g['data_lnM2']}, ours {math.log(m2):.10f})")
-        info.append(dict(N=len(D), W=W, res=res, m1=m1, m2=m2))
+        c2 = (c2_from_martin(m1, 2), c2_from_martin(m2, 3))
+        say(f"  c2 at p = 2, 3: {c2[0]}, {c2[1]}   (Panzer-Yeats Theorem 1.8: M(G^[p-1]) / (3p) mod p)")
+        info.append(dict(N=len(D), W=W, res=res, m1=m1, m2=m2, c2=c2))
     a, b = info
     assert a["N"] == b["N"]
     W = max(a["W"], b["W"])
@@ -57,10 +61,15 @@ for i, pair in enumerate(load_pairs(), 1):
     say(f"  => Hepp bounds {'EXACTLY EQUAL' if hepp_equal else 'DIFFERENT' if hepp_differ else 'UNDECIDED (add primes)'}")
     first = 1 if a["m1"] != b["m1"] else 2 if a["m2"] != b["m2"] else None
     say(f"  => Martin sequences {'DIFFER at r = %d' % first if first else 'agree for r <= 2'}")
+    say(f"  => c2 invariants {'DIFFER' if a['c2'] != b['c2'] else 'agree'} at p = 2, 3")
+    c2_differs = c2_differs or a["c2"] != b["c2"]
     ok_all &= hepp_equal and first is not None
 
 say(f"\n{'VERIFIED' if ok_all else 'NOT VERIFIED'}: every pair has exactly equal Hepp bounds and different "
     f"Martin sequences ({time.time() - t0:.0f} s).")
 say("By Panzer's Conjecture 1.2 (arXiv:1908.09820) each pair would have equal periods; by Panzer-Yeats "
     "Conjecture 1.10 (arXiv:2304.05299) each pair would have different periods. Both cannot hold.")
+if c2_differs:
+    say("A pair with equal Hepp bounds and different c2 also contradicts Brown-Schnetz Conjecture 5 "
+        "(arXiv:1006.4064: equal periods imply equal c2) together with Panzer's Conjecture 1.2.")
 sys.exit(0 if ok_all else 1)

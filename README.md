@@ -1,43 +1,53 @@
-# Two "perfect invariant" conjectures for φ⁴ periods are incompatible
+# Panzer's Hepp-bound conjecture contradicts the Martin and c₂ conjectures for φ⁴ periods
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24559411.svg)](https://doi.org/10.5281/zenodo.24559411)
 
-Two conjectures each claim that a single combinatorial invariant determines the period of a primitive φ⁴ graph.
+Several conjectures claim that a combinatorial invariant determines, or is determined by, the period of a primitive φ⁴ graph.
 
 - **Panzer, Conjecture 1.2** in *Hepp's bound for Feynman graphs and matroids*, [arXiv:1908.09820](https://arxiv.org/abs/1908.09820). Two φ⁴ graphs have equal periods if and only if they have equal Hepp bounds.
 - **Panzer–Yeats, Conjecture 1.10** in *Feynman symmetries of the Martin and c₂ invariants of regular graphs*, [arXiv:2304.05299](https://arxiv.org/abs/2304.05299). For cyclically 6-connected 4-regular graphs $G_1, G_2$, the periods of $G_1\setminus v_1$ and $G_2\setminus v_2$ are equal if and only if the Martin sequences are equal, $M(G_1^{[r]}) = M(G_2^{[r]})$ for all $r\ge1$. Here $G^{[r]}$ replaces every edge by $r$ parallel edges, and $M$ is the Martin invariant.
+- **Brown–Schnetz, Conjecture 5** in *A K3 in φ⁴*, Duke Math. J. 161 (2012), [arXiv:1006.4064](https://arxiv.org/abs/1006.4064). Graphs with equal periods have equal $c_2$ invariants.
 
 ## Result
 
-**Theorem.** Each of the following pairs of completed primitive 13-loop φ⁴ graphs has exactly equal Hepp bounds and different Martin sequences. Graphs are given by their Nickel labels.
+**Theorem.** Each of the following pairs of completed primitive 13-loop φ⁴ graphs has exactly equal Hepp bounds and different Martin sequences. In pair 3 the $c_2$ invariants at $p = 3$ also differ. Graphs are given by their Nickel labels.
 
-| Pair | Graph | Hepp bound | $M(G)$ | $M(G^{[2]})$ |
-|---|---|---|---|---|
-| 1 | `/bcde/2379/35a/56/67ae/9c/8b/8b/cd/be/cd///e//` | 2182616636.556… | 79588 | 348839598217834266624 |
-|   | `/bcde/4567/56ae/79ae/56c/d/b/8b/9cd/be/cd/////` | equal | 79588 | 348843461127526416384 |
-| 2 | `/bcde/2345/68a/45c/8c/7b/79b/de/de/abc/de/////` | 2595492870.040… | 73720 | 284715817343259770880 |
-|   | `/bcde/3578/345a/45/6e/c/78d/9b/9b/ce/bcd///e//` | equal | 73720 | 284712506277809356800 |
-| 3 | `/bcde/2469/89a/4578/57/6e/ab/ce/bd/cd/bc///e//` | 2694150096.292… | **71544** | 268222963836147204096 |
-|   | `/bcde/489a/3567/578/569/e/ab/ce/bd/cd/bc///e//` | equal | **71604** | 268261011285444919296 |
+| Pair | Graph | Hepp bound | $M(G)$ | $M(G^{[2]})$ | $c_2^{(3)}$ |
+|---|---|---|---|---|---|
+| 1 | `/bcde/2379/35a/56/67ae/9c/8b/8b/cd/be/cd///e//` | 2182616636.556… | 79588 | 348839598217834266624 | 0 |
+|   | `/bcde/4567/56ae/79ae/56c/d/b/8b/9cd/be/cd/////` | equal | 79588 | 348843461127526416384 | 0 |
+| 2 | `/bcde/2345/68a/45c/8c/7b/79b/de/de/abc/de/////` | 2595492870.040… | 73720 | 284715817343259770880 | 2 |
+|   | `/bcde/3578/345a/45/6e/c/78d/9b/9b/ce/bcd///e//` | equal | 73720 | 284712506277809356800 | 2 |
+| 3 | `/bcde/2469/89a/4578/57/6e/ab/ce/bd/cd/bc///e//` | 2694150096.292… | **71544** | 268222963836147204096 | **1** |
+|   | `/bcde/489a/3567/578/569/e/ab/ce/bd/cd/bc///e//` | equal | **71604** | 268261011285444919296 | **0** |
 
-**Corollary.** Panzer's Conjecture 1.2 and Panzer–Yeats Conjecture 1.10 cannot both be true.
+$c_2^{(p)}$ is the $c_2$ invariant of $G\setminus v$ at the prime $p$. It follows from the Martin sequence by Panzer–Yeats Theorem 1.8: $c_2^{(p)}(G\setminus v) \equiv M(G^{[p-1]})/(3p) \bmod p$. At $p = 2$ all six graphs have $c_2^{(2)} = 0$.
 
-The corollary follows from either pair. All six graphs are 4-regular and simple, and their only 4-edge cuts isolate a single vertex. Each is therefore cyclically 6-connected, and each decompletion is a primitive log-divergent φ⁴ graph. Both conjectures apply to every pair.
+**Corollary.**
+1. Panzer's Conjecture 1.2 and Panzer–Yeats Conjecture 1.10 cannot both be true (any of the three pairs).
+2. Panzer's Conjecture 1.2 and Brown–Schnetz Conjecture 5 cannot both be true (pair 3).
+
+All six graphs are 4-regular and simple, and their only 4-edge cuts isolate a single vertex. Each is therefore cyclically 6-connected, and each decompletion is a primitive log-divergent φ⁴ graph, so all three conjectures apply.
 - Conjecture 1.2 says the two graphs of a pair have equal periods, because their Hepp bounds are equal.
 - Conjecture 1.10 says they have different periods, because their Martin sequences differ.
+- Conjecture 5 says the graphs of pair 3 have different periods, because their $c_2$ invariants differ.
 
-The corollary is also proved in Lean, for pair 3 (see [Lean formalization](#lean-formalization)).
+Part 1 is also proved in Lean, for pair 3 (see [Lean formalization](#lean-formalization)). Part 2 uses Panzer–Yeats Theorem 1.8, which is not formalized here.
 
 ## Which conjecture fails
 
 The periods of pair 3 were computed with Borinsky's tropical Monte Carlo integrator ([tropical-feynman-quadrature](https://github.com/michibo/tropical-feynman-quadrature)), using 7.5·10⁹ samples per graph:
 
-| Graph | $M(G)$ | Period |
-|---|---|---|
-| `/bcde/2469/89a/4578/57/6e/ab/ce/bd/cd/bc///e//` | 71544 | 20703.18 ± 1.01 |
-| `/bcde/489a/3567/578/569/e/ab/ce/bd/cd/bc///e//` | 71604 | 20703.00 ± 1.01 |
+| Graph | $M(G)$ | $c_2^{(3)}$ | Period |
+|---|---|---|---|
+| `/bcde/2469/89a/4578/57/6e/ab/ce/bd/cd/bc///e//` | 71544 | 1 | 20703.18 ± 1.01 |
+| `/bcde/489a/3567/578/569/e/ab/ce/bd/cd/bc///e//` | 71604 | 0 | 20703.00 ± 1.01 |
 
-The difference is 0.18 ± 1.42, so the periods agree to about 7·10⁻⁵ of their size. This is numerical evidence that Conjecture 1.10 is the false one: two graphs with different Martin invariants appear to have the same period, as Conjecture 1.2 predicts. It is not a proof, since an exact evaluation of 13-loop periods is out of reach. Balduf's dataset gives 20696.3 ± 5.3 for the first graph, which is consistent.
+The difference is 0.18 ± 1.42, so the periods agree to about 7·10⁻⁵ of their size. Balduf's dataset gives 20696.3 ± 5.3 for the first graph, which is consistent. The numerics do not decide the question:
+- Equal periods would refute both the Martin conjecture and the Brown–Schnetz $c_2$ conjecture.
+- Periods that differ by less than the error bar would refute only Panzer's Hepp conjecture.
+
+Graphs with equal Hepp bounds are expected to have very close periods in any case, because the Hepp bound tracks the period closely (Panzer, Section 5). Panzer also notes that his conjecture requires graphs with equal Hepp bounds to have equal $c_2$ invariants. Pair 3 is a pair where this fails, which points to Conjecture 1.2 as the false one. Settling the question needs either the exact periods or a far more precise computation than the one here.
 
 ## Method
 
@@ -49,6 +59,8 @@ where the sum runs over all orderings $\sigma$ of the edges (Panzer, Definition 
 
 [`src/hepp_check.c`](src/hepp_check.c) evaluates $H$ by a recursion over the $2^{26}$ edge subsets, modulo primes and in floating point. Equality is then proved by a Chinese remainder argument. Let $W=\max\omega$ (here $W = 13$) and $D=\mathrm{lcm}(1,\dots,W)$. Then $X = D^{N-1}H$ is a positive integer with $X\le N!\,D^{N-1} < 2^{550}$. If two Hepp bounds agree modulo primes whose product exceeds that bound, they are equal. The script uses the 24 largest primes below $2^{30}$, whose product exceeds $2^{719}$. The program also checks that every proper nonempty edge subset has $\omega > 0$ and that $\omega(E)=0$; this is exactly primitivity and log-divergence.
 
+**$c_2$ invariant.** [`src/c2.py`](src/c2.py) applies Panzer–Yeats Theorem 1.8 to the exact values of $M(G)$ and $M(G^{[2]})$, giving $c_2$ at $p = 2$ and $p = 3$. The self-test checks it on the zigzag graphs, whose $c_2$ is $-1$ at every prime.
+
 **Martin invariant.** Two unrelated computations:
 1. [`src/martin_trees.py`](src/martin_trees.py) counts the partitions of $E(G\setminus v)$ into two spanning trees. This equals $M(G)$ for any vertex $v$ (Panzer–Yeats, Theorem 1.3). The count is done at all 15 vertices.
 2. [`src/martin_recursion.py`](src/martin_recursion.py) evaluates the defining vertex recursion (Definition 1.1), both for $G$ and for the 8-regular graph $G^{[2]}$.
@@ -58,7 +70,8 @@ The two methods agree on $M(G)$. The values of $\ln M(G)$ and $\ln M(G^{[2]})$ a
 **Tests.** [`tests/selftest.py`](tests/selftest.py) checks every method on all 72 graphs of the dataset with 3 to 8 loops:
 - the Hepp bound by definition (a sum over all orderings) against the rational subset recursion;
 - the C code modulo primes against exact rational values, at several decompletion vertices;
-- floating-point Hepp bounds and both Martin invariants against the dataset.
+- floating-point Hepp bounds and both Martin invariants against the dataset;
+- the $c_2$ formula on the zigzag graphs.
 
 ## Lean formalization
 
@@ -127,13 +140,14 @@ The graphs and the reference values come from P.-H. Balduf, *Feynman periods in 
 
 - E. Panzer, *Hepp's bound for Feynman graphs and matroids*, Ann. Inst. Henri Poincaré D 10 (2023) 31–119, [arXiv:1908.09820](https://arxiv.org/abs/1908.09820).
 - E. Panzer, K. Yeats, *Feynman symmetries of the Martin and c₂ invariants of regular graphs*, [arXiv:2304.05299](https://arxiv.org/abs/2304.05299).
+- F. Brown, O. Schnetz, *A K3 in φ⁴*, Duke Math. J. 161 (2012) 1817–1862, [arXiv:1006.4064](https://arxiv.org/abs/1006.4064).
 - P.-H. Balduf, *Statistics of Feynman amplitudes in φ⁴-theory*, JHEP 11 (2023) 160.
 - P.-H. Balduf, K. Shaban, *Predicting Feynman periods in φ⁴-theory*, [arXiv:2403.16217](https://arxiv.org/abs/2403.16217).
 - M. Borinsky, *Tropical Monte Carlo quadrature for Feynman integrals*, [arXiv:2008.12310](https://arxiv.org/abs/2008.12310).
 
 ## Citation
 
-The code, data and Lean proof are archived on Zenodo: [doi:10.5281/zenodo.24559411](https://doi.org/10.5281/zenodo.24559411) (all versions). Version 1.0 is [doi:10.5281/zenodo.24559412](https://doi.org/10.5281/zenodo.24559412). GitHub's "Cite this repository" button uses [CITATION.cff](CITATION.cff).
+The code, data and Lean proof are archived on Zenodo: [doi:10.5281/zenodo.24559411](https://doi.org/10.5281/zenodo.24559411) (all versions). Version 1.1 adds the $c_2$ invariants and corrects the assessment of which conjecture fails; version 1.0 is [doi:10.5281/zenodo.24559412](https://doi.org/10.5281/zenodo.24559412). GitHub's "Cite this repository" button uses [CITATION.cff](CITATION.cff).
 
 ## Author and license
 

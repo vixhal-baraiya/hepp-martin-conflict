@@ -1,9 +1,11 @@
 {
-  "title": "Panzer's Hepp-bound conjecture and the Panzer-Yeats Martin conjecture for phi^4 periods are incompatible",
+  "title": "Panzer's Hepp-bound conjecture contradicts the Martin and c2 conjectures for phi^4 periods",
   "upload_type": "software",
-  "description": "<p>Three pairs of completed primitive 13-loop &phi;<sup>4</sup> graphs with exactly equal Hepp bounds and different Martin sequences. Hence Panzer's Conjecture 1.2 (equal Hepp bound iff equal period, arXiv:1908.09820) and Panzer&ndash;Yeats Conjecture 1.10 (equal Martin sequence iff equal period, arXiv:2304.05299) cannot both hold. Numerical periods of one pair, equal to 7&middot;10<sup>-5</sup> with different Martin invariants, indicate that the Martin conjecture is the false one.</p><p>The archive contains independent verification code (exact Hepp bounds modulo primes with a Chinese remainder bound, Martin invariants by spanning-tree partitions and by the vertex recursion), period logs, and a Lean 4 / Mathlib proof of the incompatibility in which the large finite computations are evaluated with native_decide.</p><p>The code is licensed under the MIT License; the text, logs and data under CC BY 4.0. Graph data from P.-H. Balduf, doi:10.5683/SP3/NLEDGH (CC BY 4.0).</p>",
+  "description": "<p>Three pairs of completed primitive 13-loop &phi;<sup>4</sup> graphs with exactly equal Hepp bounds and different Martin sequences; in one pair the c<sub>2</sub> invariants at p = 3 also differ. Hence Panzer's Conjecture 1.2 (equal Hepp bound iff equal period, arXiv:1908.09820) cannot hold together with Panzer&ndash;Yeats Conjecture 1.10 (equal Martin sequence iff equal period, arXiv:2304.05299), nor with Brown&ndash;Schnetz Conjecture 5 (equal periods imply equal c<sub>2</sub>, arXiv:1006.4064). Monte Carlo periods of that pair agree to 7&middot;10<sup>-5</sup>, which does not decide between the alternatives; the c<sub>2</sub> difference points to the Hepp-bound conjecture as the false one.</p><p>The archive contains independent verification code (exact Hepp bounds modulo primes with a Chinese remainder bound, Martin invariants by spanning-tree partitions and by the vertex recursion, c<sub>2</sub> from Panzer&ndash;Yeats Theorem 1.8), period logs, and a Lean 4 / Mathlib proof of the Hepp/Martin incompatibility in which the large finite computations are evaluated with native_decide.</p><p>The code is licensed under the MIT License; the text, logs and data under CC BY 4.0. Graph data from P.-H. Balduf, doi:10.5683/SP3/NLEDGH (CC BY 4.0).</p>",
   "creators": [
-    {"name": "Baraiya, Vishal Singh"}
+    {
+      "name": "Baraiya, Vishal Singh"
+    }
   ],
   "license": "MIT",
   "keywords": [
@@ -11,13 +13,31 @@
     "phi^4 theory",
     "Hepp bound",
     "Martin invariant",
+    "c2 invariant",
     "counterexample",
     "Lean 4"
   ],
   "related_identifiers": [
-    {"identifier": "arXiv:1908.09820", "relation": "references", "scheme": "arxiv"},
-    {"identifier": "arXiv:2304.05299", "relation": "references", "scheme": "arxiv"},
-    {"identifier": "10.5683/SP3/NLEDGH", "relation": "references", "scheme": "doi"}
+    {
+      "identifier": "arXiv:1908.09820",
+      "relation": "references",
+      "scheme": "arxiv"
+    },
+    {
+      "identifier": "arXiv:2304.05299",
+      "relation": "references",
+      "scheme": "arxiv"
+    },
+    {
+      "identifier": "arXiv:1006.4064",
+      "relation": "references",
+      "scheme": "arxiv"
+    },
+    {
+      "identifier": "10.5683/SP3/NLEDGH",
+      "relation": "references",
+      "scheme": "doi"
+    }
   ],
-  "version": "1.0"
+  "version": "1.1"
 }

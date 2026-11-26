@@ -7,7 +7,9 @@ Hepp bound:
   * hepp_check.c in floating point = the dataset's Hepp column, up to 8 loops.
 Martin invariant:
   * spanning-tree partitions (at every vertex) = vertex recursion = dataset ln M[1], up to 8 loops;
-  * vertex recursion for G^[2] = dataset ln M[2], up to 8 loops."""
+  * vertex recursion for G^[2] = dataset ln M[2], up to 8 loops.
+c2 invariant (Panzer-Yeats Theorem 1.8 applied to the Martin sequence):
+  * zigzag graphs give c2 = -1 at p = 2 and p = 3."""
 import json, math, os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src"))
 from graphs import parse, decomplete, vertices, check_completed_primitive, HERE
@@ -15,6 +17,7 @@ from hepp_reference import hepp_by_orderings, hepp_by_subsets
 from hepp_exact import run, primes_below
 from martin_trees import martin_by_trees
 from martin_recursion import martin_r
+from c2 import c2_from_martin
 
 small = json.load(open(os.path.join(HERE, "..", "data", "small_graphs.json")))["graphs"]
 primes = primes_below(1 << 30, 3)
@@ -62,6 +65,13 @@ for g in small:
     m2 = martin_r(E, 2)
     check(abs(math.log(m2) - float(g["data_lnM2"])) < 1e-9, f"{tag}: M2 {m2} vs data")
     print(f"ok    {tag}: Hepp {hf:.10g}  M1 {m1}  M2 {m2}")
+
+# c2 from the Martin sequence: zigzag graphs (circulants C_n(1,2)) have c2 = -1 at every prime.
+for n in (5, 6, 7, 8):
+    Z = sorted({tuple(sorted((i, (i + d) % n))) for i in range(n) for d in (1, 2)})
+    vals = (c2_from_martin(martin_r(Z, 1), 2), c2_from_martin(martin_r(Z, 2), 3))
+    check(vals == (1, 2), f"zigzag C_{n}(1,2): c2 at p=2,3 = {vals}, expected -1")
+    print(f"ok    zigzag C_{n}(1,2): c2 = -1 at p = 2 and 3")
 
 print("selftest:", "PASSED" if not fails else f"{fails} FAILURES")
 sys.exit(1 if fails else 0)

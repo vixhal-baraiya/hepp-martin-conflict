@@ -5,14 +5,17 @@
   Hepp bound (float, decompleted at vertex 0 / at vertex 14): 2182616636.5562620163 / 2182616636.55626249313   dataset: 2182616636.5563001633
   M(G)     = 79588   (spanning-tree partitions at all 15 vertices = vertex recursion; dataset ln M1 11.2846186067, ours 11.2846186067)
   M(G^[2]) = 348839598217834266624   (vertex recursion; dataset ln M2 47.3011438865, ours 47.3011438865)
+  c2 at p = 2, 3: 0, 0   (Panzer-Yeats Theorem 1.8: M(G^[p-1]) / (3p) mod p)
 /bcde/4567/56ae/79ae/56c/d/b/8b/9cd/be/cd/////
   structure: 15 vertices, 30 edges, 4-regular, simple, smallest nontrivial edge cut 6
   Hepp bound (float, decompleted at vertex 0 / at vertex 14): 2182616636.55626153946 / 2182616636.5562620163   dataset: 2182616636.5563001633
   M(G)     = 79588   (spanning-tree partitions at all 15 vertices = vertex recursion; dataset ln M1 11.2846186067, ours 11.2846186067)
   M(G^[2]) = 348843461127526416384   (vertex recursion; dataset ln M2 47.3011549600, ours 47.3011549600)
+  c2 at p = 2, 3: 0, 0   (Panzer-Yeats Theorem 1.8: M(G^[p-1]) / (3p) mod p)
   Hepp residues agree modulo 24 of 24 primes below 2^30; product of the primes >= 2^719, bound N! lcm(1..13)^(N-1) < 2^550
   => Hepp bounds EXACTLY EQUAL
   => Martin sequences DIFFER at r = 2
+  => c2 invariants agree at p = 2, 3
 
 === Pair 2 ===
 /bcde/2345/68a/45c/8c/7b/79b/de/de/abc/de/////
@@ -20,14 +23,17 @@
   Hepp bound (float, decompleted at vertex 0 / at vertex 14): 2595492870.03999996185 / 2595492870.04000043869   dataset: 2595492870.0399999619
   M(G)     = 73720   (spanning-tree partitions at all 15 vertices = vertex recursion; dataset ln M1 11.2080294118, ours 11.2080294118)
   M(G^[2]) = 284715817343259770880   (vertex recursion; dataset ln M2 47.0980232246, ours 47.0980232246)
+  c2 at p = 2, 3: 0, 2   (Panzer-Yeats Theorem 1.8: M(G^[p-1]) / (3p) mod p)
 /bcde/3578/345a/45/6e/c/78d/9b/9b/ce/bcd///e//
   structure: 15 vertices, 30 edges, 4-regular, simple, smallest nontrivial edge cut 6
   Hepp bound (float, decompleted at vertex 0 / at vertex 14): 2595492870.03999996185 / 2595492870.03999948502   dataset: 2595492870.0400004387
   M(G)     = 73720   (spanning-tree partitions at all 15 vertices = vertex recursion; dataset ln M1 11.2080294118, ours 11.2080294118)
   M(G^[2]) = 284712506277809356800   (vertex recursion; dataset ln M2 47.0980115951, ours 47.0980115951)
+  c2 at p = 2, 3: 0, 2   (Panzer-Yeats Theorem 1.8: M(G^[p-1]) / (3p) mod p)
   Hepp residues agree modulo 24 of 24 primes below 2^30; product of the primes >= 2^719, bound N! lcm(1..13)^(N-1) < 2^550
   => Hepp bounds EXACTLY EQUAL
   => Martin sequences DIFFER at r = 2
+  => c2 invariants agree at p = 2, 3
 
 === Pair 3 ===
 /bcde/2469/89a/4578/57/6e/ab/ce/bd/cd/bc///e//
@@ -35,14 +41,18 @@
   Hepp bound (float, decompleted at vertex 0 / at vertex 14): 2694150096.29269599915 / 2694150096.29269552231   dataset: 2694150096.2926959991
   M(G)     = 71544   (spanning-tree partitions at all 15 vertices = vertex recursion; dataset ln M1 11.1780679240, ours 11.1780679240)
   M(G^[2]) = 268222963836147204096   (vertex recursion; dataset ln M2 47.0383502631, ours 47.0383502631)
+  c2 at p = 2, 3: 0, 1   (Panzer-Yeats Theorem 1.8: M(G^[p-1]) / (3p) mod p)
 /bcde/489a/3567/578/569/e/ab/ce/bd/cd/bc///e//
   structure: 15 vertices, 30 edges, 4-regular, simple, smallest nontrivial edge cut 6
   Hepp bound (float, decompleted at vertex 0 / at vertex 14): 2694150096.29269552231 / 2694150096.29269504547   dataset: 2694150096.2926998138
   M(G)     = 71604   (spanning-tree partitions at all 15 vertices = vertex recursion; dataset ln M1 11.1789062173, ours 11.1789062173)
   M(G^[2]) = 268261011285444919296   (vertex recursion; dataset ln M2 47.0384921032, ours 47.0384921032)
+  c2 at p = 2, 3: 0, 0   (Panzer-Yeats Theorem 1.8: M(G^[p-1]) / (3p) mod p)
   Hepp residues agree modulo 24 of 24 primes below 2^30; product of the primes >= 2^719, bound N! lcm(1..13)^(N-1) < 2^550
   => Hepp bounds EXACTLY EQUAL
   => Martin sequences DIFFER at r = 1
+  => c2 invariants DIFFER at p = 2, 3
 
-VERIFIED: every pair has exactly equal Hepp bounds and different Martin sequences (145 s).
+VERIFIED: every pair has exactly equal Hepp bounds and different Martin sequences (163 s).
 By Panzer's Conjecture 1.2 (arXiv:1908.09820) each pair would have equal periods; by Panzer-Yeats Conjecture 1.10 (arXiv:2304.05299) each pair would have different periods. Both cannot hold.
+A pair with equal Hepp bounds and different c2 also contradicts Brown-Schnetz Conjecture 5 (arXiv:1006.4064: equal periods imply equal c2) together with Panzer's Conjecture 1.2.

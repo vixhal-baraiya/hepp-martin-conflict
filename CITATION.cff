@@ -1,16 +1,18 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
-title: "Panzer's Hepp-bound conjecture and the Panzer-Yeats Martin conjecture for phi^4 periods are incompatible"
+title: "Panzer's Hepp-bound conjecture contradicts the Martin and c2 conjectures for phi^4 periods"
 abstract: >-
   Three pairs of completed primitive 13-loop phi^4 graphs with exactly equal
-  Hepp bounds and different Martin sequences, so Panzer's Conjecture 1.2 and
-  Panzer-Yeats Conjecture 1.10 cannot both hold. Includes verification code,
-  period logs, and a Lean 4 proof of the incompatibility.
+  Hepp bounds and different Martin sequences; in one pair the c2 invariants at
+  p = 3 also differ. So Panzer's Conjecture 1.2 cannot hold together with
+  Panzer-Yeats Conjecture 1.10, nor with Brown-Schnetz Conjecture 5. Includes
+  verification code, period logs, and a Lean 4 proof of the Hepp/Martin
+  incompatibility.
 authors:
   - family-names: Baraiya
     given-names: Vishal Singh
 type: software
-version: "1.0"
+version: "1.1"
 date-released: "2026-11-26"
 license: MIT
 doi: "10.5281/zenodo.24559411"
@@ -27,5 +29,6 @@ keywords:
   - phi^4 theory
   - Hepp bound
   - Martin invariant
+  - c2 invariant
   - counterexample
   - Lean 4
