@@ -1,0 +1,12 @@
+import HeppCompute
+
+/-! Native evaluation (`native_decide`): the Hepp tables of both graphs agree modulo the
+primes in `chunk 3`. -/
+
+namespace HM
+
+theorem hepp_chunk_3 :
+    heppMods (decomplete Ga 0) D (chunk 3) = heppMods (decomplete Gb 0) D (chunk 3) := by
+  native_decide
+
+end HM
