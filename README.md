@@ -1,5 +1,7 @@
 # Two "perfect invariant" conjectures for φ⁴ periods are incompatible
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24559411.svg)](https://doi.org/10.5281/zenodo.24559411)
+
 Two conjectures each claim that a single combinatorial invariant determines the period of a primitive φ⁴ graph.
 
 - **Panzer, Conjecture 1.2** in *Hepp's bound for Feynman graphs and matroids*, [arXiv:1908.09820](https://arxiv.org/abs/1908.09820). Two φ⁴ graphs have equal periods if and only if they have equal Hepp bounds.
@@ -128,6 +130,10 @@ The graphs and the reference values come from P.-H. Balduf, *Feynman periods in 
 - P.-H. Balduf, *Statistics of Feynman amplitudes in φ⁴-theory*, JHEP 11 (2023) 160.
 - P.-H. Balduf, K. Shaban, *Predicting Feynman periods in φ⁴-theory*, [arXiv:2403.16217](https://arxiv.org/abs/2403.16217).
 - M. Borinsky, *Tropical Monte Carlo quadrature for Feynman integrals*, [arXiv:2008.12310](https://arxiv.org/abs/2008.12310).
+
+## Citation
+
+The code, data and Lean proof are archived on Zenodo: [doi:10.5281/zenodo.24559411](https://doi.org/10.5281/zenodo.24559411) (all versions). Version 1.0 is [doi:10.5281/zenodo.24559412](https://doi.org/10.5281/zenodo.24559412). GitHub's "Cite this repository" button uses [CITATION.cff](CITATION.cff).
 
 ## Author and license
 
